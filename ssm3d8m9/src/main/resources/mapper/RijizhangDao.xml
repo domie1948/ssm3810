@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RijizhangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RijizhangEntity" id="rijizhangMap">
+        <result property="xuhao" column="xuhao"/>
+        <result property="riqi" column="riqi"/>
+        <result property="zhaiyao" column="zhaiyao"/>
+        <result property="shouru" column="shouru"/>
+        <result property="zhichu" column="zhichu"/>
+        <result property="jine" column="jine"/>
+        <result property="guanligonghao" column="guanligonghao"/>
+        <result property="guanlixingming" column="guanlixingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RijizhangVO" >
+		SELECT * FROM rijizhang  rijizhang         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RijizhangVO" >
+		SELECT  rijizhang.* FROM rijizhang  rijizhang
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RijizhangView" >
+
+		SELECT  rijizhang.* FROM rijizhang  rijizhang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RijizhangView" >
+		SELECT * FROM rijizhang  rijizhang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
